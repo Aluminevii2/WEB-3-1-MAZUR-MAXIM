@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+#pagina {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+#header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+#meniu {
+    background: #34495e;
+    padding: 10px;
+    text-align: center;
+}
+
+#meniu a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+#continut {
+    padding: 15px;
+}
+
+.tara {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.steag {
+    border-collapse: collapse;
+    border: 1px solid #999;
+}
+
+.steag td {
+    padding: 0;
+}
+
+.comparativ {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.comparativ th,
+.comparativ td {
+    border: 1px solid #333;
+    padding: 6px;
+    text-align: left;
+}
+
+.comparativ th {
+    background: #ddd;
+}
+
+#footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
