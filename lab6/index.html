@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidența elevilor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="container py-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <div>
+      <h1 class="display-6 mb-1">Evidența elevilor</h1>
+      <p class="text-secondary mb-0">Datele rămân salvate în browser, chiar și după închidere.</p>
+    </div>
+    <div class="counter">
+      <span id="count">0</span>
+      <small>elevi înregistrați</small>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row g-4">
+
+      <div class="col-lg-4">
+        <div class="card form-card shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Elev nou</h2>
+
+            <form id="studentForm" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nume și prenume</label>
+                <input type="text" class="form-control" id="name" placeholder="ex. Ion Popescu">
+              </div>
+              <div class="row g-3 mb-3">
+                <div class="col-5">
+                  <label for="age" class="form-label">Vârsta</label>
+                  <input type="number" class="form-control" id="age" placeholder="15">
+                </div>
+                <div class="col-7">
+                  <label for="group" class="form-label">Grupa / clasa</label>
+                  <input type="text" class="form-control" id="group" placeholder="ex. 10A">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="nume@exemplu.md">
+              </div>
+
+              <div id="formError" class="alert alert-danger py-2 d-none" role="alert"></div>
+
+              <button type="submit" class="btn btn-primary w-100 fw-bold">Adaugă elev</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <input type="search" id="search" class="form-control search" placeholder="Caută după nume și prenume">
+          <button type="button" id="clearAll" class="btn btn-outline-danger">Șterge toți elevii</button>
+        </div>
+
+        <div id="cards" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

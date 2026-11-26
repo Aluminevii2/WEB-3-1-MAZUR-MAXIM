@@ -1,0 +1,105 @@
+:root{
+  --ink:#1a2140;
+  --paper:#eef1f7;
+  --accent:#3555ff;
+  --sun:#ffc533;
+  --font-head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+}
+
+body{
+  font-family:'DM Sans','Segoe UI',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+}
+
+h1,h2,h3,.counter span{font-family:var(--font-head)}
+h1{font-weight:800;letter-spacing:-.02em}
+
+.counter{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--ink);
+  color:#fff;
+  padding:10px 20px 10px 14px;
+  border-radius:999px;
+}
+.counter span{
+  font-weight:800;
+  font-size:1.5rem;
+  background:var(--sun);
+  color:var(--ink);
+  min-width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+}
+.counter small{opacity:.85}
+
+.form-card{
+  border:0;
+  border-radius:16px;
+  position:sticky;
+  top:16px;
+}
+.form-card .btn-primary{
+  --bs-btn-bg:var(--accent);
+  --bs-btn-border-color:var(--accent);
+  padding:.65rem;
+}
+.form-control:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 .2rem rgba(53,85,255,.18);
+}
+
+.search{flex:1 1 220px;width:auto}
+
+.student{
+  --tone:var(--accent);
+  border:0;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 18px -10px rgba(26,33,64,.4);
+}
+.student .stripe{height:56px;background:var(--tone)}
+.avatar{
+  width:72px;
+  height:72px;
+  margin:-36px auto 0;
+  border-radius:50%;
+  border:4px solid #fff;
+  background:var(--tone);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-family:var(--font-head);
+  font-weight:800;
+  font-size:1.4rem;
+}
+.student .card-title{font-weight:700;line-height:1.2}
+.student .badge{
+  background:color-mix(in srgb,var(--tone) 15%,white)!important;
+  color:var(--ink);
+}
+.student .mail{
+  word-break:break-all;
+  font-size:.9rem;
+}
+
+.empty{
+  padding:48px 16px;
+  text-align:center;
+  color:#5b6485;
+}
+.empty strong{
+  display:block;
+  font-family:var(--font-head);
+  font-size:1.3rem;
+  color:var(--ink);
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
