@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de studenți · Flexbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <div>
+      <h1>Studenții grupei</h1>
+      <p class="sub">Adaugă, șterge și aranjează cardurile cu Flexbox.</p>
+    </div>
+    <div class="counter" aria-live="polite">
+      <span id="count">0</span>
+      <small>studenți în listă</small>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <aside class="side">
+      <section class="panel">
+        <h2>Student nou</h2>
+        <form id="studentForm" novalidate>
+          <label>Nume complet
+            <input type="text" id="name" placeholder="ex. Ana Popescu">
+          </label>
+          <div class="row">
+            <label>Grupa
+              <input type="text" id="group" placeholder="ex. TI-231">
+            </label>
+            <label>Vârsta
+              <input type="number" id="age" placeholder="14–100">
+            </label>
+          </div>
+          <label>Specialitatea
+            <input type="text" id="specialty" placeholder="ex. Informatică">
+          </label>
+          <fieldset class="colors">
+            <legend>Culoarea avatarului</legend>
+            <label class="swatch" style="--c:#3555ff"><input type="radio" name="color" value="#3555ff" checked><span></span></label>
+            <label class="swatch" style="--c:#ff7a45"><input type="radio" name="color" value="#ff7a45"><span></span></label>
+            <label class="swatch" style="--c:#14a37f"><input type="radio" name="color" value="#14a37f"><span></span></label>
+            <label class="swatch" style="--c:#a85cf9"><input type="radio" name="color" value="#a85cf9"><span></span></label>
+            <label class="swatch" style="--c:#e5484d"><input type="radio" name="color" value="#e5484d"><span></span></label>
+          </fieldset>
+          <p id="formError" class="error" role="alert" hidden></p>
+          <button type="submit" class="btn-main">Adaugă studentul</button>
+        </form>
+      </section>
+      <section class="panel">
+        <h2>Flexbox</h2>
+
+        <div class="ctrl">
+          <span class="ctrl-name">justify-content</span>
+          <div class="chips" id="justifyBtns">
+            <button data-value="flex-start">flex-start</button>
+            <button data-value="center">center</button>
+            <button data-value="flex-end">flex-end</button>
+            <button data-value="space-between">space-between</button>
+            <button data-value="space-around">space-around</button>
+            <button data-value="space-evenly">space-evenly</button>
+          </div>
+        </div>
+
+        <div class="ctrl">
+          <span class="ctrl-name">align-items</span>
+          <div class="chips" id="alignBtns">
+            <button data-value="stretch">stretch</button>
+            <button data-value="flex-start">flex-start</button>
+            <button data-value="center">center</button>
+            <button data-value="flex-end">flex-end</button>
+            <button data-value="baseline">baseline</button>
+          </div>
+        </div>
+
+        <div class="ctrl">
+          <span class="ctrl-name">flex-wrap</span>
+          <div class="chips" id="wrapBtns">
+            <button data-value="wrap">wrap</button>
+            <button data-value="nowrap">nowrap</button>
+          </div>
+        </div>
+
+        <div class="ctrl">
+          <label class="ctrl-name" for="gap">gap: <output id="gapOut">20px</output></label>
+          <input type="range" id="gap" min="0" max="80" value="20">
+        </div>
+      </section>
+    </aside>
+
+    <section class="stage">
+      <pre class="css-view" id="cssView"></pre>
+      <div id="cards" class="cards"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
